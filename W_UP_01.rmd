@@ -30,7 +30,7 @@ $H_A$: The average number of pushups done by line players is statistically diffe
 # Methods
 
 <!--Decide on your methods: use "variable analysis" or other appropriate descriptors. Make sure to choose at least one graphical method and at least one numerical method.!-->
-
+positions are a categorical variable. Push ups are a numerical analysis. I will do an analysis based on push ups of a team from different positions.
 # Results
 
 <!--Divide this section into two sub-sections: One for your descriptive results and one for your inferential results.!-->
@@ -40,17 +40,33 @@ $H_A$: The average number of pushups done by line players is statistically diffe
 ### Graphical Descriptive Results
 
 <!--Graphical results here. Make sure to show your code. Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too. Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+```{r}
+boxplot(pushups~position,data=mydata)
+```
+ 
 
-### Numerical Descriptive Results
 
+The skill players can do more pushups than the line players   
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+### Numerical Descriptive Results 
+```{r}
+favstats(pushups~position,data=mydata)
+```
+Skill players can do more pushups than Line players.
+
 
 ## Inferential Results
+
+```{r}
+t.test(pushups~position,data=mydata)
+```
+The p value is so small that it projects the null hypothesis
 
 <!--State hypothesis clearly. Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc. Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
 
 # Discussion and Conclusion
 
+Skill players overall have a greater pushups performance than that of line players. 
 <!--Discussion and conclusion here. If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason. Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
